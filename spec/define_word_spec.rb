@@ -24,14 +24,15 @@ describe ('Define::Word') do
 
   describe ('#sort') do
     it ("sorts the words alphabetically") do
-      userword = Define::Word.new({:my_word => "Poodle"})
-      userword.save()
-      userword = Define::Word.new({:my_word => "Great Dane"})
-      userword.save()
-      userword = Define::Word.new({:my_word => "Husky"})
-      userword.save()
+      poodle = Define::Word.new({:my_word => "Poodle"})
+      poodle.save()
+      great_dane = Define::Word.new({:my_word => "Great Dane"})
+      great_dane.save()
+      husky = Define::Word.new({:my_word => "Husky"})
+      husky.save()
       Define::Word.sort()
-      expect(Define::Word.all()).to(eq(["Great Dane", "Husky", "Poodle"]))
+
+      expect(Define::Word.all()).to(eq([great_dane, husky, poodle]))
 
     end
   end
