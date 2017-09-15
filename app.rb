@@ -14,7 +14,7 @@ post('/') do
 
   new_word = Define::Word.new({:my_word=> @input_word})
   new_word.save()
-
+stop_and_open_page
   @word_list = Define::Word.sort()
   erb(:input)
 end
