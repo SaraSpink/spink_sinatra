@@ -1,40 +1,44 @@
 class Word
-  @@word_list = []
+  @@Word = []
   attr_reader :id
-  attr_accessor :word, :my_word
+  attr_accessor :word, :definition
 
-  def initialize (attribute)
-
-    @my_word = attribute.fetch("my_word")
-    @id = @@word_list.length + 1
+  def initialize(attribute)
+    @word = attribute.fetch(:word)
+    @definition = attribute.fetch(:definition)
+    @id = @@Word.length + 1
   end
 
-  def my_word
-    @my_word
+  def word
+    @word
+  end
+
+  def definition
+    @definition
   end
 
   def save
-    @@word_list.push(self)
+    @@Word.push(self)
   end
 
   def self.all()
-    @@word_list
+    @@Word
   end
 
-  def self.sort()
-    @@word_list.sort_by! {|word| word.my_word}
-  end
-
-  def self.clear()
-    @@word_list = []
+  def self.sort
+    @@Word.sort_by! {|word_id| word_id.word}
   end
 
   def self.find(id)
-    item_id = id.to_i()
-    @@word_list.each do |item|
+     item_id = id.to_i()
+     @@Word.each do |item|
        if item.id == item_id
          return item
        end
-    end
+     end
+   end
+
+  def self.clear()
+    @@Word = []
   end
 end
