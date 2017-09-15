@@ -5,7 +5,7 @@ module Define
     attr_accessor :word, :my_word
 
     def initialize (attribute)
-      # @word = attribute.fetch(:word)
+      
       @my_word = attribute.fetch(:my_word)
       @id = @@word_list.length + 1
     end
