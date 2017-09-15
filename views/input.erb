@@ -8,14 +8,10 @@
     <input name="word" id="word"  class="form-control" type="text">
   </div>
 
-  <div class="form-group">
-    <label for="definition">Definition: </label>
-    <input name="definition" id="definition"  class="form-control" type="text">
-  </div>
 
   <button type="submit" class="btn btn-info">Submit</button>
 </form>
 
 <% @list.each do |word| %>
-  <h1><a href="/define/<%= word.id %>"><%= word.word %> <%= word.definition %></a></h1>
+  <h1><a href="/define/<%= word.id %>"><%= word.word %></a></h1>
 <% end %>

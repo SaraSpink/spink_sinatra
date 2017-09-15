@@ -1,7 +1,14 @@
 <h2>WorDeFINE</h2>
-
+save_and_open_page
   <h3><%= @contact_id.word %></h3>
-  <h4><%= @contact_id.definition %></h4>
+  <form action="/definition" method="post">
+    <div class="form-group">
+      <label for="definition">Define your word: </label>
+      <input name="definition" id="definition"  class="form-control" type="text">
+    </div>
+    <button type="submit" class="btn btn-info">Submit</button>
+  </form>
 
-
-<a href='/'><button type="button" class="btn btn-info">Go Back!</button></a>
+  <% @list.each do |word| %>
+    <h1><a href="/yourword/<%= word.id %>"><%= word.definition %></a></h1>
+  <% end %>
