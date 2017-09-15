@@ -7,6 +7,12 @@ describe ('Word') do
     Word.clear()
   end
 
+  describe (".all") do
+    it("is empty at first") do
+      expect(Word.all()).to(eq([]))
+    end
+  end
+
   describe ('#my_word') do
     it ("takes a user's word and returns it") do
       userword = Word.new({"my_word" => "Chrysanthemum"})

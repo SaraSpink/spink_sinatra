@@ -12,10 +12,10 @@ end
 post('/') do
   input_word = params["my_word"]
 
-  new_word = Word.new({"my_word"=> my_word})
-  new_word.save()
+  word_list = {"my_word"=> my_word}
 
-  word = Word.new(new_word)
-  @word_list = Word.all()
+  new_word = Word.new(word_list)
+  new_word.save()
+  @word_list = Word.sort()
   erb(:input)
 end
