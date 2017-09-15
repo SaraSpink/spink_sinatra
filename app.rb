@@ -16,10 +16,6 @@ post('/') do
   new_word.save()
 stop_and_open_page
   @word_list = Define::Word.sort()
+  @word_list = Define::Word.all()
   erb(:input)
-end
-
-get('/define/:id') do
-  @word = Define::Word.find(params[:id])
-  erb(:definition)
 end
