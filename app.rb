@@ -5,28 +5,24 @@ require ('./lib/define_word')
 require ('pry')
 
   get('/') do
-    @list = Contact.all()
+    @list = Word.all()
     erb(:input)
   end
 
-  get('/contacts/:id') do
-    @list = Contact.all()
-    @contact_id = Contact.find(params[:id])
-    @list = Contact.all()
+  get('/define/:id') do
+  
+    @contact_id = Word.find(params[:id])
+    @list = Word.all()
     erb(:definition)
   end
 
   post('/') do
-    @first_name_app = params["first_name"]
-    @last_name_app = params["last_name"]
-    @address_app = params["address"]
-    @city_app = params["city"]
-    @state_app = params["state"]
-    @zip_app = params["zip"]
-    @list_app = Contact.all()
-    contact_info = Contact.new({:first_name=> @first_name_app, :last_name=> @last_name_app, :address=> @address_app, :city=> @city_app, :state=> @state_app, :zip=> @zip_app})
+    @word_app = params["word"]
+    @definition_app = params["definition"]
+    @list_app = Word.all()
+    contact_info = Word.new({:word=> @word_app, :definition=> @definition_app})
 
     contact_info.save
-    @list = Contact.all()
+    @list = Word.all()
     erb(:input)
   end
