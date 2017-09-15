@@ -30,5 +30,14 @@ module Define
       @@word_list = []
     end
 
+    def self.find(id)
+    item_id = id.to_i()
+    @@word_list.each do |item|
+     if item.id == item_id
+       return item
+     end
+   end
+ end
+
   end
 end

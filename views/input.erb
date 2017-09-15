@@ -1,10 +1,10 @@
 <h2>WorDeFINE</h2>
 
 <h4>Click on a word to see it's definition: </h4>
-<p>Angular</p>
-<p>Adjacent</p>
-<p>Circumspect</p>
-
+<% @my_word_app.each do |word| %>
+  <h1><a href="/define/<%= item.id %>"><%= word.my_word %></a></h1>
+<% end %>
+save_and_open_page
 <h4>Or add your own word: </h4>
 <form action="/" method="post">
   <div class="form-group">
@@ -13,7 +13,5 @@
   </div>
 </form>
 
-
-<% @list.each do |item| %>
-  <h1><a href="/contacts/<%= item.id %>"><%= item.first_name %> <%= item.last_name %></a></h1>
-<% end %>
+<button type="submit" class="btn btn-info">Go!</button>
+</form>
