@@ -1,0 +1,19 @@
+<h2>WorDeFINE</h2>
+
+<h4>Click on a word to see it's definition: </h4>
+<p>Angular</p>
+<p>Adjacent</p>
+<p>Circumspect</p>
+
+<h4>Or add your own word: </h4>
+<form action="/" method="post">
+  <div class="form-group">
+    <label for="my_word">My word: </label>
+    <input name="my_word" id="my_word"  class="form-control" type="text">
+  </div>
+</form>
+
+
+<% @list.each do |item| %>
+  <h1><a href="/contacts/<%= item.id %>"><%= item.first_name %> <%= item.last_name %></a></h1>
+<% end %>

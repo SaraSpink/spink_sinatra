@@ -1,11 +1,11 @@
-# _Anagram Evaluator_
+# _:sunflower: WorDeFINE :sunflower:_
 
 ## Ruby  - 9.15.17
 
 ## By Sara Spink
 
 ## Description:
-
+WorDeFINE is a word game for kids! Kids can choose from a list of existing words and add their own silly definitions. They can also add words to the list. 
 
 ## Specs
 
