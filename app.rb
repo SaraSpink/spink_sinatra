@@ -4,18 +4,25 @@ also_reload('lib/**/*.rb')
 require ('./lib/define_word')
 require ('pry')
 
-get('/') do
-  @word_list = Word.all()
-  erb(:input)
-end
+  get('/') do
+    @list = Word.all()
+    erb(:input)
+  end
 
-post('/') do
-  input_word = params["my_word"]
+  get('/define/:id') do
+  
+    @contact_id = Word.find(params[:id])
+    @list = Word.all()
+    erb(:definition)
+  end
 
-  word_list = {"my_word"=> my_word}
+  post('/') do
+    @word_app = params["word"]
+    @definition_app = params["definition"]
+    @list_app = Word.all()
+    contact_info = Word.new({:word=> @word_app, :definition=> @definition_app})
 
-  new_word = Word.new(word_list)
-  new_word.save()
-  @word_list = Word.sort()
-  erb(:input)
-end
+    contact_info.save
+    @list = Word.all()
+    erb(:input)
+  end
