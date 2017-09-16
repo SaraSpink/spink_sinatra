@@ -1,14 +1,15 @@
 <h2>WorDeFINE</h2>
 
-  <h3><%= @word.term %></h3>
+  <h3>Word: <%= @word.term %></h3>
+  <% @list.each do |current_word| %>
+    <h3>Definition: <a href="/words/<%= current_word.id %>"><%= current_word.definition %></a></h3>
+  <% end %>
   <form action="/words/<%= @word.id %>/definitions" method="post">
     <div class="form-group">
-      <label for="definition">Define your word: </label>
+      <label for="definition">Enter a new definition: </label>
       <input name="definition" id="definition"  class="form-control" type="text">
     </div>
     <button type="submit" class="btn btn-info">Submit</button>
   </form>
 
-  <% @list.each do |current_word| %>
-    <h1><a href="/words/<%= current_word.id %>"><%= current_word.definition %></a></h1>
-  <% end %>
+  <h1><a href="/">return home</a></h1>
