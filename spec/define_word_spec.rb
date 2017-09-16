@@ -1,5 +1,5 @@
 require ('rspec')
-require ('define_word')
+require ('word')
 require ('pry')
 
 describe ('Word') do
