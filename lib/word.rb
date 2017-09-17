@@ -26,6 +26,6 @@ class Word
    end
 
   def self.clear()
-    @@Word = []
+    @@Word = {}
   end
 end
