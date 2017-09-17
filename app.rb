@@ -18,7 +18,6 @@ require ('pry')
 
   get('/words/:id') do
     @word = Word.find(params[:id])
-    @list = Word.all()
     erb(:definition)
   end
 
