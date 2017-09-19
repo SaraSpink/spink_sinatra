@@ -5,7 +5,7 @@ class Word
 
   def initialize(attribute)
     @term = attribute.fetch(:term)
-    @definition = attribute.fetch(:definition)
+    @definitions = [attribute.fetch(:definition)]
     @id = @@Word.length + 1
   end
 
@@ -28,4 +28,9 @@ class Word
   def self.clear()
     @@Word = {}
   end
+
+  def add_definitions(new_definition)
+    @definitions.push(new_definition)
+  end
+
 end

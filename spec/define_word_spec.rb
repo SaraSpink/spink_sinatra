@@ -38,7 +38,7 @@ describe ('Word') do
       # husky.save()
       Word.sort()
 
-      expect(Word.all()).to(eq([great_dane, husky, poodle]))
+      expect(Word.sort()).to(eq([great_dane, husky, poodle]))
 
     end
   end
@@ -51,6 +51,16 @@ describe ('Word') do
       userword2.save
       expect(userword1.id()).to(eq(1))
       expect(userword2.id()).to(eq(2))
+    end
+  end
+
+  describe ('#add_definitionS') do
+    it ("returns multiple definitions for a word") do
+      userword1 = Word.new({:term => "Chrysanthemum", :definition => "definition"})
+      userword1.save
+      userword1.add_definitions("a flower")
+
+      expect(userword1.definition()).to(eq(["definition", "a flower"]))
     end
   end
 end

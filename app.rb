@@ -22,9 +22,8 @@ require ('pry')
   end
 
   post('/words/:id/definitions') do
-    definition = params["definition"]
     word = Word.find(params[:id])
-    word.definition = definition
+    word.definition = params["definition"]
     redirect "/words/#{word.id}"
   end
 
