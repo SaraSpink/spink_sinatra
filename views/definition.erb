@@ -1,12 +1,11 @@
 <h2>WorDeFINE</h2>
 
-  <h3>Word: <%= @word.term %></h3>
+  <h1><%= @word.term %>:</h1>
+    <% @word.show_definitions.each do |definition|%>
+      <ul><%= definition %></ul>
+    <% end %>
 
-    <h3>Definition: <a href="/words/<%= @word.id %>"><%= @word.definition %></a></h3>
-      <% @word.show_definitions.each do |definition|%>
-      <%= definition %>
-      <% end %>
-
+  <h3>Enter a definition: <a href="/words/<%= @word.id %>"><%= @word.definition %></a></h3>
 
   <form action="/words/<%= @word.id %>/definitions" method="post">
     <div class="form-group">
