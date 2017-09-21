@@ -54,13 +54,15 @@ describe ('Word') do
     end
   end
 
-  describe ('#add_definitionS') do
+  describe ('#add_definitions') do
     it ("returns multiple definitions for a word") do
-      userword1 = Word.new({:term => "Chrysanthemum", :definition => "definition"})
+      userword1 = Word.new({:term => "Chrysanthemum", :definitions => @definitions})
       userword1.save
       userword1.add_definitions("a flower")
+      userword1.add_definitions("an umbrella")
+      userword1.add_definitions("a plant")
 
-      expect(userword1.definition()).to(eq(["definition", "a flower"]))
+      expect(userword1.definitions()).to(eq(["a flower", "an umbrella", "a plant"]))
     end
   end
 end
