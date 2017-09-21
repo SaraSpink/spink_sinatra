@@ -9,9 +9,9 @@ require ('pry')
     erb(:input)
   end
 
-  post('/words') do
+  post('/') do
     @word_app = params["term"]
-    new_word = Word.new({:term=> @word_app, :definition=> @definition_app})
+    new_word = Word.new({:term=> @word_app, :definitions=> @definition_app})
     new_word.save
     redirect "/words/#{new_word.id}"
   end
@@ -19,11 +19,13 @@ require ('pry')
   get('/words/:id') do
     @word = Word.find(params[:id])
     erb(:definition)
+
   end
 
   post('/words/:id/definitions') do
     word = Word.find(params[:id])
-    word.definition = params["definition"]
+    definitions = params["definition"]
+    word.add_definitions(definitions)
     redirect "/words/#{word.id}"
   end
 

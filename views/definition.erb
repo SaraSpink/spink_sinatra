@@ -3,6 +3,10 @@
   <h3>Word: <%= @word.term %></h3>
 
     <h3>Definition: <a href="/words/<%= @word.id %>"><%= @word.definition %></a></h3>
+      <% @word.show_definitions.each do |definition|%>
+      <%= definition %>
+      <% end %>
+
 
   <form action="/words/<%= @word.id %>/definitions" method="post">
     <div class="form-group">

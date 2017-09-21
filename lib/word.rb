@@ -5,7 +5,7 @@ class Word
 
   def initialize(attribute)
     @term = attribute.fetch(:term)
-    @definition = attribute.fetch(:definition)
+    # @definition = attribute.fetch(:definition)
     @definitions = []
     @id = @@Word.length + 1
   end
@@ -19,7 +19,7 @@ class Word
   end
 
   def self.sort
-    @@Word.sort_by! {|word| word.term}
+    @@Word.sort_by {|word| word.term}
   end
 
   def self.find(id)
@@ -34,7 +34,7 @@ class Word
     @definitions.push(new_definition)
   end
 
-  def definitions
+  def show_definitions
     @definitions
   end
 
