@@ -1,7 +1,19 @@
 <h2>WorDeFINE</h2>
 
-  <h3><%= @contact_id.word %></h3>
-  <h4><%= @contact_id.definition %></h4>
+  <h3>Word: <%= @word.term %></h3>
+
+    <h3>Definition: <a href="/words/<%= @word.id %>"><%= @word.definition %></a></h3>
+      <% @word.show_definitions.each do |definition|%>
+      <%= definition %>
+      <% end %>
 
 
-<a href='/'><button type="button" class="btn btn-info">Go Back!</button></a>
+  <form action="/words/<%= @word.id %>/definitions" method="post">
+    <div class="form-group">
+      <label for="definition">Enter a new definition: </label>
+      <input name="definition" id="definition"  class="form-control" type="text">
+    </div>
+    <button type="submit" class="btn btn-info">Submit</button>
+  </form>
+
+  <h1><a href="/">return home</a></h1>
