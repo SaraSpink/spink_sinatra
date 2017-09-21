@@ -5,10 +5,18 @@
 ## By Sara Spink
 
 ## Description:
-WorDeFINE is a word game for kids! Kids can choose from a list of existing words and add their own silly definitions. They can also add words to the list. 
+WorDeFINE is a word game for kids! Kids can choose from a list of existing words and add their own silly definitions. They can also add words to the list.
+
+## Setup/Installation:
+view app at https://protected-gorge-66904.herokuapp.com/
 
 ## Specs
 
+| Description                 | Input               | Output                    |
+|-----------------------------|---------------------|---------------------------|
+| takes a value from the user | word and definition | clickable link            |
+| navigate to definition page | click the link      | go to the definition page |
+| return to main page         | click 'go back'     | return to main page       |
 
 
 
