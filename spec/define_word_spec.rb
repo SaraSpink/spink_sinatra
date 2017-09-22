@@ -28,21 +28,6 @@ describe ('Word') do
     end
   end
 
-  describe ('#sort') do
-    it ("sorts the words alphabetically") do
-      poodle = Word.new({:term => "Poodle", :definition => "definition"})
-      # poodle.save()
-      great_dane = Word.new({:term => "Great Dane", :definition => "definition"})
-      # great_dane.save()
-      husky = Word.new({:term => "Husky", :definition => "definition"})
-      # husky.save()
-      Word.sort()
-
-      expect(Word.sort()).to(eq([great_dane, husky, poodle]))
-
-    end
-  end
-
   describe ('#initialize id') do
     it ("assigns an id to each word on the list") do
       userword1 = Word.new({:term => "Chrysanthemum", :definition => "definition"})
@@ -61,7 +46,6 @@ describe ('Word') do
       userword1.add_definitions("a flower")
       userword1.add_definitions("an umbrella")
       userword1.add_definitions("a plant")
-
       expect(userword1.definitions()).to(eq(["a flower", "an umbrella", "a plant"]))
     end
   end

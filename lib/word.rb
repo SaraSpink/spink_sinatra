@@ -1,7 +1,7 @@
 class Word
   @@Word = {}
   attr_reader :id
-  attr_accessor :term, :definition
+  attr_accessor :term, :definitions
 
   def initialize(attribute)
     @term = attribute.fetch(:term)
@@ -16,10 +16,6 @@ class Word
 
   def self.all()
     @@Word.values
-  end
-
-  def self.sort
-    @@Word.sort_by {|word| word.term}
   end
 
   def self.find(id)
