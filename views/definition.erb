@@ -1,9 +1,11 @@
 <h2>WorDeFINE</h2>
 
-  <h1><%= @word.term %>:</h1>
+<div class="jumbotron">
+  <h2><%= @word.term %>:</h2>
     <% @word.show_definitions.each do |definition|%>
-      <ul><%= definition %></ul>
+      <h3><ul><%= definition %></ul></h3>
     <% end %>
+</div>
 
   <h3>Enter a definition: <a href="/words/<%= @word.id %>"><%= @word.definition %></a></h3>
 
@@ -15,4 +17,4 @@
     <button type="submit" class="btn btn-info">Submit</button>
   </form>
 
-  <h1><a href="/">return home</a></h1>
+  <h3><a href="/">return home</a></h3>

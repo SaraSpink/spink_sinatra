@@ -12,7 +12,9 @@
   <button type="submit" class="btn btn-info">Submit</button>
 </form>
 
+<div class="jumbotron">
 <h3>Click on a word below to visit it's page and add definitions</h3>
 <% @list.each do |word| %>
-  <h4><a href="/words/<%= word.id %>"><%= word.term %></a></h4>
+  <h2><a href="/words/<%= word.id %>"><%= word.term %></a></h2>
 <% end %>
+</div>
